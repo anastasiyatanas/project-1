@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- FONTS -->
+   <link href="https://fonts.googleapis.com/css?family=Merienda+One|Quicksand" rel="stylesheet">
+   <!-- Javascript -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!-- JQUERY -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <!-- BOOTSTRAP -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <!-- STYLE -->
+   <link rel="stylesheet" type="text/css" href="voyage.css">
+
+   <title>Voyage: Travel with Us</title>
 </head>
 <body>
-    
+   <div class="jumbotron">
+      <h1>Welcome, Voyager!</h1>
+         <p>Let us find your activities and food plans for your trip</p>
+   </div>
+
+   <!-- MAIN INFO CONTAINER -->
+   <div class="container">
+      <!-- SEARCH ROWS -->
+      <div class="row">
+       <div class="col food_div">
+         <h2>Search for Nearby Food</h2>
+            <input type="search" class="search_bar" id="food_search"></input>
+            <button type="submit" class="submit_button_style" id="food_submit_button">Submit</button>
+
+            <div id="food_map">
+            <!-- ZOMATO API TO POPULATE INFORMATION HERE -->
+            </div>
+       </div>
+       <div class="col activity_div">
+         <h2>Search for Nearby Activities</h2>
+            <input type="search" class="search_bar" id="activity_search"></input>
+            <button type="submit" class="submit_button_style" id="activity_submit_button">Submit</button>
+
+            <div id="activity_map">
+            <!-- SYGIC API TO POPULATE INFORMATION HERE -->
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- ITINERARY -->
+   <div class="container">
+      <div id="itinerary">
+         <h2>Your Itinerary</h2>
+            <table class="table">
+               <thead>
+                  <tr>
+                     <th>Activity</th>
+                     <th>Location</th>
+                     <th>Time</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <!-- USER INPUT GOES HERE -->
+               </tbody>
+            </table>
+      </div>
+   </div>
+
+   <!-- ABOUT US -->
+   <div class="about_us">
+      <div class="container middle_text_width">
+         <h2>Why Voyage?</h2>
+            <p>Voyage was developed with travelers in mind. We bring the best of food, entertainment, and personalization straight to your browser.</p>
+      </div>
+   </div>
+
+   <!-- FOOTER -->
+   <footer>
+      <p>Copywrite: Voyager&trade;</p>
+   </footer>
 </body>
 </html>

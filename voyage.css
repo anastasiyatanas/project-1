@@ -1,0 +1,74 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3 {
+	font-family: 'Merienda One', cursive;
+}
+/*JUMBO*/
+	.jumbotron {
+		background: #9e3a4c;
+		margin: 0 auto;
+		text-align: center;
+		color: #fff;
+		text-shadow: 1px 3px 8px #000;
+	}
+	.jumbotron p {
+		max-width: 50rem;
+		margin: 0 auto;
+	}
+/*MAIN CONTENT*/
+	.container {
+		margin-top: 2em;
+	}
+	.col {
+		text-align: center;
+	}
+	.submit_button_style {
+		background: orange;
+		color: #fff;
+		border-radius: .5em;
+		border: 1px solid #eee;
+	}
+	.search_bar {
+		background: #eee;
+		box-shadow: inset 1px 1px 4px 0px #000;
+		border:1px solid #c5b4b7;
+	}
+/*FOOD SEARCH*/
+	.food_div {
+		margin: 0 auto;
+	}
+	#food_search {
+	}
+/*ACTIVITY SEARCH*/
+	.activity_div {
+		margin: 0 auto;
+	}
+	#activity_search {
+	}
+/*ITINERARY*/
+	#itinerary {
+		margin-bottom: 3em;
+	}
+	#itinerary h2 {
+		text-align: center;
+	}
+/*ABOUT US*/
+	.about_us{
+		background:#ececec;
+		width:100%;
+		margin:0 auto;
+		margin-top: 1em;
+		padding: 2em;
+	}
+	.middle_text_width {
+		max-width: 50rem;
+		margin: 0 auto;
+	}
+/*FOOTER*/
+	footer {
+		background: #524c4c;
+		color:#fff;
+		text-align: center;
+		padding:2em 0;
+	}

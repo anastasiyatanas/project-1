@@ -4,56 +4,89 @@ body {
 h1, h2, h3 {
 	font-family: 'Merienda One', cursive;
 }
-/*JUMBO*/
+/* ---------------------------- JUMBO ---------------------------- */
 	.jumbotron {
-		background: #9e3a4c;
+		background: url("./andrew-stutesman-643239-unsplash.jpg") center center;
 		margin: 0 auto;
-		text-align: center;
+		padding-left:0;
 		color: #fff;
 		text-shadow: 1px 3px 8px #000;
+		position: relative;
+		z-index: 2;
 	}
-	.jumbotron p {
+	/* ---------------------------- OVERLAY ---------------------------- */
+	.jumbotron:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: -1;
+		background: rgba(0, 149, 136, 0.58);
+	}
+	.jumbotron h1 {
+		text-align: center;
+	}
+	.jumbotron h4 {
 		max-width: 50rem;
 		margin: 0 auto;
+		text-align: center;
 	}
-/*MAIN CONTENT*/
+/* ---------------------------- MAIN CONTENT ---------------------------- */
 	.container {
 		margin-top: 2em;
 	}
 	.col {
 		text-align: center;
 	}
-	.submit_button_style {
-		background: orange;
-		color: #fff;
-		border-radius: .5em;
-		border: 1px solid #eee;
+	.mdl-card {
+		width: 100%;
+		background: #ececec;
+		margin: 0 auto;
+		margin-top: 1em;
 	}
-	.search_bar {
-		background: #eee;
-		box-shadow: inset 1px 1px 4px 0px #000;
-		border:1px solid #c5b4b7;
+/*---------------------------- FOOD SEARCH ----------------------------*/
+	#map {
+		height: 100%;
+		width: 100%;
+		margin: 4em 0;
+		padding: 10em;
 	}
-/*FOOD SEARCH*/
 	.food_div {
 		margin: 0 auto;
 	}
 	#food_search {
 	}
-/*ACTIVITY SEARCH*/
+/*---------------------------- ACTIVITY SEARCH ---------------------------- */
 	.activity_div {
 		margin: 0 auto;
 	}
 	#activity_search {
 	}
-/*ITINERARY*/
+/* ---------------------------- TABLES ---------------------------- */
+	.submit_tables {
+		background: #ececec;
+		margin-top: 1em;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+	}
+	tr {
+		padding:1em;
+		border-bottom: 1px solid #524c4c;
+	}
+	td {
+		padding: .8em .5em;
+	}
+/* ---------------------------- ITINERARY ---------------------------- */
 	#itinerary {
 		margin-bottom: 3em;
 	}
-	#itinerary h2 {
+	#itinerary h3 {
 		text-align: center;
 	}
-/*ABOUT US*/
+	thead {
+		text-align: center;
+	}
+/* ---------------------------- ABOUT US ---------------------------- */
 	.about_us{
 		background:#ececec;
 		width:100%;
@@ -65,10 +98,16 @@ h1, h2, h3 {
 		max-width: 50rem;
 		margin: 0 auto;
 	}
-/*FOOTER*/
+/* ---------------------------- FOOTER ---------------------------- */
 	footer {
 		background: #524c4c;
 		color:#fff;
 		text-align: center;
 		padding:2em 0;
+	}
+/* ---------------------------- MEDIA QUIERIES ---------------------------- */
+	@media screen and (max-width: 767px) {
+		.mdl-card {
+			width: 100%;
+		}
 	}

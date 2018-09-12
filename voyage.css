@@ -14,7 +14,15 @@ h1, h2, h3 {
 		position: relative;
 		z-index: 2;
 	}
-	/* ---------------------------- OVERLAY ---------------------------- */
+	.jumbotron h1 {
+		text-align: center;
+	}
+	.jumbotron h4 {
+		max-width: 50rem;
+		margin: 0 auto;
+		text-align: center;
+	}
+/* ---------------------------- OVERLAY ---------------------------- */
 	.jumbotron:before {
 		content: "";
 		position: absolute;
@@ -24,20 +32,9 @@ h1, h2, h3 {
 		z-index: -1;
 		background: rgba(0, 149, 136, 0.58);
 	}
-	.jumbotron h1 {
-		text-align: center;
-	}
-	.jumbotron h4 {
-		max-width: 50rem;
-		margin: 0 auto;
-		text-align: center;
-	}
-/* ---------------------------- MAIN CONTENT ---------------------------- */
+/* ---------------------------- SEARCH CONTENT ---------------------------- */
 	.container {
 		margin-top: 2em;
-	}
-	.col {
-		text-align: center;
 	}
 	.mdl-card {
 		width: 100%;
@@ -45,29 +42,14 @@ h1, h2, h3 {
 		margin: 0 auto;
 		margin-top: 1em;
 	}
-/*---------------------------- FOOD SEARCH ----------------------------*/
-	#map {
-		height: 100%;
-		width: 100%;
-		margin: 4em 0;
-		padding: 10em;
-	}
-	.food_div {
-		margin: 0 auto;
-	}
-	#food_search {
-	}
-/*---------------------------- ACTIVITY SEARCH ---------------------------- */
-	.activity_div {
-		margin: 0 auto;
-	}
-	#activity_search {
-	}
-/* ---------------------------- TABLES ---------------------------- */
+/* ---------------------------- SEARCH TABLES ---------------------------- */
 	.submit_tables {
 		background: #ececec;
 		margin-top: 1em;
 		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+	}
+	.submit_tables tr:hover {
+		background: #b2ff59;
 	}
 	tr {
 		padding:1em;
@@ -76,14 +58,18 @@ h1, h2, h3 {
 	td {
 		padding: .8em .5em;
 	}
+/*---------------------------- GOOGLE MAP ----------------------------*/
+	#map {
+		height: 100%;
+		width: 100%;
+		margin: 4em 0;
+		padding: 10em;
+	}
 /* ---------------------------- ITINERARY ---------------------------- */
 	#itinerary {
 		margin-bottom: 3em;
 	}
-	#itinerary h3 {
-		text-align: center;
-	}
-	thead {
+	#itinerary h3, thead, td {
 		text-align: center;
 	}
 /* ---------------------------- ABOUT US ---------------------------- */

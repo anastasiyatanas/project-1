@@ -6,107 +6,87 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <!-- FONTS -->
       <link href="https://fonts.googleapis.com/css?family=Merienda+One|Quicksand" rel="stylesheet">
-   <!-- Javascript -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="voyage.js"></script>
-   <!-- JQUERY -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
    <!-- BOOTSTRAP -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
    <!-- MATERIAL IO LITE -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-light_green.min.css" />
-       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
    <!-- ICONS -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!-- STYLE -->
       <link rel="stylesheet" type="text/css" href="voyage.css">
-   <title>Voyage: Travel with Us</title>
+  
+      <title>Voyage: Travel with Us</title>
 
 </head>
 <body>
    <div class="jumbotron">
       <h1>Welcome, Voyager!</h1>
-         <h4>Let us find your activities and food plans for your trip</h4>
+         <h4>Find nearby activities and food plans for your trip</h4>
          
    </div>
+
+   <div id="error"></div>
 
    <!-- MAIN INFO CONTAINER -->
    <div class="container">
       <!-- SEARCH ROWS -->
       <div class="row">
        <div class="col food_div">
-      <!-- SEARCH FOR FOOD -->
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Food Nearby</h2>
+        <!-- SEARCH FOR FOOD -->
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Food Nearby</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+              <!-- Textfield with Floating Label -->
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="food_search">
+                    <label class="mdl-textfield__label" for="sample3">Nearby Food</label>
+                </div>
+              </form>
+              </div>
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="food_submit_button">Submit</button>
         </div>
-        <div class="mdl-card__supporting-text">
-            <!-- Textfield with Floating Label -->
-            <form action="#">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="food_search">
-                  <label class="mdl-textfield__label" for="sample3">Search for Food</label>
-               </div>
-            </form>
-            </div>
-            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="food_submit_button">Submit</button>
-      </div>
 
-         <div id="food_map">
-         <!-- ZOMATO API TO POPULATE INFORMATION HERE -->
-         </div>
-         <!--SYGIC API TABLE-->
-         <table class="submit_tables" id="zomato_table">
-            <!-- <thead>
-              <tr>Name</tr>
-              <tr>Description</tr>
-              <tr>Rating</tr>
-            </thead> -->
-            <tbody id="zomato_tablebody">
-              <!--Search Info populates here-->
-            </tbody>
-
-          </table>
-       </div>
-
-       <div class="col activity_div">
-      <!-- SEARCH FOR ACTIVITY -->
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Activities Nearby</h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-            <!-- Textfield with Floating Label -->
-            <form action="#">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="activity_search">
-                  <label class="mdl-textfield__label" for="sample3">Search for Activities</label>
-               </div>
-            </form>
-            </div>
-            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="activity_submit_button">Submit</button>
-      </div>
-
-         <!-- <div id="activity_map"> -->
-            <!--SYGIC API TABLE-->
-            <table class="submit_tables" id="sygic_table">
-              <!-- <thead>
-                <tr>Name</tr>
-                <tr>Description</tr>
-                <tr>Rating</tr>
-              </thead> -->
-              <tbody id="sygic_tablebody">
+          <!-- ZOMATO API TO POPULATE INFORMATION HERE -->
+          <table class="submit_tables" id="zomato_table">
+              <tbody id="zomato_tablebody">
                 <!--Search Info populates here-->
               </tbody>
-
             </table>
+        </div>
+
+        <div class="col activity_div">
+        <!-- SEARCH FOR ACTIVITY -->
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Activities Nearby</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+              <!-- Textfield with Floating Label -->
+              <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="activity_search">
+                    <label class="mdl-textfield__label" for="sample3">Your City + Desired Activity</label>
+                  </div>
+              </form>
+              </div>
+              <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="activity_submit_button">Submit</button>
+          </div>
+
+
+              <!--SYGIC API TABLE-->
+              <table class="submit_tables" id="sygic_table">
+                <tbody id="sygic_tablebody">
+                  <!--Search Info populates here-->
+                </tbody>
+              </table>
         </div>
       </div>
     </div>
-  </div>
 
    <!-- GOOGLE MAP -->
    <div id="map">
@@ -121,12 +101,12 @@
             <table class="table">
                <thead>
                   <tr>
-                     <th><i class="material-icons">local_activity</i><br>Activity</th>
+                     <th><i class="material-icons">local_activity</i><br>Name</th>
+                     <th><i class="material-icons">view_list</i><br>Description</th>
                      <th><i class="material-icons">location_on</i><br>Location</th>
-                     <th><i class="material-icons">access_time</i><br>Time</th>
                   </tr>
                </thead>
-               <tbody>
+               <tbody id="itinerary_tablebody">
                   <!-- USER INPUT GOES HERE -->
                </tbody>
             </table>
@@ -144,9 +124,16 @@
 
    <!-- FOOTER -->
    <footer>
-      <p><i class="material-icons">copyright</i> Voyager</p>
+      <p><i class="material-icons">copyright</i> Voyage</p>
    </footer>
 </body>
+<!--firebass-->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script> 
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Javascript -->
+<script type="text/javascript" src="voyage.js"></script>
 <!--Google Maps-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
